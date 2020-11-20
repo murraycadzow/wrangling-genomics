@@ -8,6 +8,8 @@ Lesson for quality control and wrangling genomics data. This repository is maint
 
 Amazon public AMI for this tutorial is "dataCgen-qc". 
 
+This is a customised version for running on NeSI
+
 ## Background
 
 Wrangling genomics trains novice learners on a variant calling workflow. Participants will learn how to evaluate sequence quality and what to do if it is not good. We will then cover aligning reads to a genome, and calling variants, as well as discussing different file formats. Results will be visualized. Finally, we will cover how to automate the process by building a shell script.
