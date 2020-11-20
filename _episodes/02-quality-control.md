@@ -50,10 +50,16 @@ To download the data, run the commands below.
 Here we are using the `-p` option for `mkdir`. This option allows `mkdir` to create the new directory, even if one of the parent directories doesn't already exist. It also supresses errors if the directory already exists, without overwriting that directory. 
 
 It will take about 15 minutes to download the files.
+
+First ensure we are in our project directory on NeSI
+
 ~~~
-# make sure you are in the Project directory on NeSI
 cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username> 
 
+~~~
+{: .bash}
+
+~~~
 mkdir -p  dc_workshop/data/untrimmed_fastq/
 cd dc_workshop/data/untrimmed_fastq
 
@@ -744,10 +750,10 @@ us whether this sample passed, failed, or is borderline (`WARN`). Remember, to q
 We can make a record of the results we obtained for all our samples
 by concatenating all of our `summary.txt` files into a single file 
 using the `cat` command. We'll call this `fastqc_summaries.txt` and move
-it to `~/dc_workshop/docs`.
+it to `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs`.
 
 ~~~
-$ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt 
+$ cat */summary.txt >  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs/fastqc_summaries.txt 
 ~~~
 {: .bash}
 
@@ -761,7 +767,7 @@ $ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
 >> We can get the list of all failed tests using `grep`. 
 >> 
 >> ~~~ 
->> $ cd ~/dc_workshop/docs
+>> $ cd  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs
 >> $ grep FAIL fastqc_summaries.txt
 >> ~~~
 >> {: .bash}
@@ -785,8 +791,8 @@ $ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
 > {: .solution}
 {: .challenge}
 
- 
-# Other notes  -- Optional 
+  
+# Other notes  -- Optional  
 
 > ## Quality Encodings Vary
 >
