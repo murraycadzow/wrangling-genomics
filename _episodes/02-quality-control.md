@@ -51,8 +51,11 @@ Here we are using the `-p` option for `mkdir`. This option allows `mkdir` to cre
 
 It will take about 15 minutes to download the files.
 ~~~
-mkdir -p ~/dc_workshop/data/untrimmed_fastq/
-cd ~/dc_workshop/data/untrimmed_fastq
+# make sure you are in the Project directory on NeSI
+cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username> 
+
+mkdir -p  dc_workshop/data/untrimmed_fastq/
+cd dc_workshop/data/untrimmed_fastq
 
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
@@ -782,7 +785,7 @@ $ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
 > {: .solution}
 {: .challenge}
 
-
+ 
 # Other notes  -- Optional 
 
 > ## Quality Encodings Vary
