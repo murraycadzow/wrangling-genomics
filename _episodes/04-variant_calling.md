@@ -43,6 +43,13 @@ $ gunzip data/ref_genome/ecoli_rel606.fasta.gz
 ~~~
 {: .bash}
 
+And now we need to load the software modules we want to use so they are ready for us later
+~~~
+bash /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
+~~~
+{: .bash}
+
+
 > ## Exercise 
 > 
 > We saved this file as `data/ref_genome/ecoli_rel606.fasta.gz` and then decompressed it. 

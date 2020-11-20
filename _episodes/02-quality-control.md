@@ -56,6 +56,8 @@ First ensure we are in our project directory on NeSI
 ~~~
 cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username> 
 
+# Load the required software modules
+bash /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
 ~~~
 {: .bash}
 
