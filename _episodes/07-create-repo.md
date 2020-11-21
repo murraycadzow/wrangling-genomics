@@ -18,14 +18,16 @@ Once Git is configured, we can start using it.
 
 
 
-First make sure we're in `dc_workshop`:
+First lets make an example directory to use git in, before we start using for `dc_workshop`:
 
 ~~~
-$ cd ~/dc_workshop
+$ mkdir ~/example_git/
+
+$ cd ~/example_git/
 ~~~
 {: .language-bash}
 
-Then we tell Git to make `dc_workshop` a [repository]({{ page.root }}{% link reference.md %}#repository)
+Then we tell Git to make `example_git` a [repository]({{ page.root }}{% link reference.md %}#repository)
 -- a place where Git can store versions of our files:
 
 
@@ -36,9 +38,9 @@ $ git init
 
 It is important to note that `git init` will create a repository that
 includes subdirectories and their files---there is no need to create
-separate repositories nested within the `dc_workshop` repository, whether
+separate repositories nested within the `example_git` repository, whether
 subdirectories are present from the beginning or added later. Also, note
-that the creation of the `dc_workshop` directory and its initialization as a
+that the creation of the `example_git` directory and its initialization as a
 repository are completely separate processes.
 
 If we use `ls` to show the directory's contents,
@@ -50,7 +52,7 @@ $ ls
 {: .language-bash}
 
 But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `dc_workshop` called `.git`:
+we can see that Git has created a hidden directory within `example_git` called `.git`:
 
 ~~~
 $ ls -a
@@ -88,7 +90,7 @@ wording of the output might be slightly different.
 
 
 > ## Removing version control
-> > $ rm -rf dc_workshop/.git
+> > $ rm -rf example_git/.git
 > > {: .language-bash}
 > >
 > > But be careful! Running this command in the wrong directory, will remove
