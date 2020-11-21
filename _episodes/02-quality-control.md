@@ -39,6 +39,24 @@ built under the assumption that the data will be provided in a specific format.
 
 # Starting with Data
 
+
+Your directory for this this course is found at `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<username>`, replace `<username>` with your NeSI username.
+
+Before we download our data we first want to create the directory for us to store it in. We'll create a directory inside the NeSI project directory for this course, for your user. Once we've done that we will then create a short cut so you can access it easier.
+
+~~~
+cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<username>
+
+mkdir dc_workshop/
+
+cd ~/
+
+ln -s /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/users/<username>/dc_workshop/ ~/dc_workshop
+
+~~~
+{: .bash}
+
+
 Often times, the first step in a bioinformatic workflow is getting the data you want to work with onto a computer where you can work with it. If you have outsourced sequencing of your data, the sequencing center will usually provide you with a link that you can use to download your data. Today we will be working with publicly available sequencing data.
 
 We are studying a population of *Escherichia coli* (designated Ara-3), which were propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three samples from this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations. The population changed substantially during the course of the experiment, and we will be exploring how with our variant calling workflow. 
@@ -51,19 +69,10 @@ Here we are using the `-p` option for `mkdir`. This option allows `mkdir` to cre
 
 It will take about 15 minutes to download the files.
 
-First ensure we are in our project directory on NeSI
 
 ~~~
-cd /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username> 
-
-# Load the required software modules
-bash /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
-~~~
-{: .bash}
-
-~~~
-mkdir -p  dc_workshop/data/untrimmed_fastq/
-cd dc_workshop/data/untrimmed_fastq
+mkdir -p  ~/dc_workshop/data/untrimmed_fastq/
+cd ~/dc_workshop/data/untrimmed_fastq
 
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
@@ -752,10 +761,10 @@ us whether this sample passed, failed, or is borderline (`WARN`). Remember, to q
 We can make a record of the results we obtained for all our samples
 by concatenating all of our `summary.txt` files into a single file 
 using the `cat` command. We'll call this `fastqc_summaries.txt` and move
-it to `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs`.
+it to `~/dc_workshop/docs`.
 
 ~~~
-$ cat */summary.txt >  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs/fastqc_summaries.txt 
+$ cat */summary.txt >  ~/dc_workshop/docs/fastqc_summaries.txt 
 ~~~
 {: .bash}
 
@@ -769,7 +778,7 @@ $ cat */summary.txt >  /scale_wlg_persistent/filesets/project/nesi02659/obss_202
 >> We can get the list of all failed tests using `grep`. 
 >> 
 >> ~~~ 
->> $ cd  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/docs
+>> $ cd  ~/dc_workshop/docs
 >> $ grep FAIL fastqc_summaries.txt
 >> ~~~
 >> {: .bash}

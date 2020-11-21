@@ -119,7 +119,7 @@ In this example, we've told Trimmomatic:
 Now we will run Trimmomatic on our data. To begin, navigate to your `untrimmed_fastq` data directory:
 
 ~~~
-$ cd  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/data/untrimmed_fastq
+$ cd  ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
@@ -284,7 +284,7 @@ control process! Before we move on, let's move our trimmed FASTQ files
 to a new subdirectory within our `data/` directory.
 
 ~~~
-$ cd  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/data/untrimmed_fastq
+$ cd  ~/dc_workshop/data/untrimmed_fastq
 $ mkdir ../trimmed_fastq
 $ mv *.trim* ../trimmed_fastq
 $ cd ../trimmed_fastq
@@ -313,7 +313,7 @@ SRR2584863_2un.trim.fastq.gz  SRR2584866_2un.trim.fastq.gz  SRR2589044_2un.trim.
 >> In your NeSI terminal window do:
 >>
 >> ~~~
->> $ fastqc  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/data/trimmed_fastq/*.fastq*
+>> $ fastqc  ~/dc_workshop/data/trimmed_fastq/*.fastq*
 >> ~~~
 >> {: .bash}
 >>

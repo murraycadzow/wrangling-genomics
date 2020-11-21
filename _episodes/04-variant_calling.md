@@ -36,14 +36,14 @@ The alignment process consists of two steps:
 First we download the reference genome for *E. coli* REL606. Although we could copy or move the file with `cp` or `mv`, most genomics workflows begin with a download step, so we will practice that here. 
 
 ~~~
-$ cd  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop
+$ cd  ~/dc_workshop
 $ mkdir -p data/ref_genome
 $ curl -L -o data/ref_genome/ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
 $ gunzip data/ref_genome/ecoli_rel606.fasta.gz
 ~~~
 {: .bash}
 
-And now we need to load the software modules we want to use so they are ready for us later
+And now we need to load the software modules we want to use so they are ready for us later. This command runs a Bash script, which we'll touch on what that is in a later lesson.
 ~~~
 bash /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
 ~~~
@@ -73,7 +73,7 @@ and will enable us to run our variant calling workflow quite quickly.
 ~~~
 $ curl -L -o sub.tar.gz https://ndownloader.figshare.com/files/14418248
 $ tar xvf sub.tar.gz
-$ mv sub/  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/data/trimmed_fastq_small
+$ mv sub/  ~/dc_workshop/data/trimmed_fastq_small
 ~~~
 {: .bash}
 
@@ -87,7 +87,7 @@ $ mkdir -p results/sam results/bam results/bcf results/vcf
 {: .bash}
 
 
-### Index the reference genome
+### Index t he reference genome
 Our first step is to index the reference genome for use by BWA. Indexing allows the aligner to quickly find potential alignment sites for query sequences in a genome, which saves time during alignment. Indexing the reference only has to be run once. The only reason you would want to create a new index is if you are working with a different reference genome or you are using a different tool for alignment.
 
 ~~~
@@ -184,8 +184,8 @@ $ samtools view -S -b results/sam/SRR2584866.aligned.sam > results/bam/SRR258486
 ~~~
 {: .output}
 
- 
-# ## Sort BAM file by coordinates
+  
+#  ## Sort BAM file by coordinates
 
 Next we sort the BAM file using the `sort` command from `samtools`. `-o` tells the command where to write the output.
 
@@ -276,8 +276,8 @@ $ vcfutils.pl varFilter results/bcf/SRR2584866_variants.vcf  > results/vcf/SRR25
 ~~~
 {: .bash}
 
- 
-## Explore the VCF format:
+  
+##  Explore the VCF format:
 
 ~~~
 $ less -S results/vcf/SRR2584866_final_variants.vcf
@@ -395,7 +395,7 @@ to learn more about the VCF file format.
 > {: .solution}
 {: .challenge}
 
-## Assess the alignment (visualization) - optional step
+##  Assess the alignment (visualization) - optional step
 
 It is often instructive to look at your data in a genome browser. Visualization will allow you to get a "feel" for 
 the data, as well as detecting abnormalities and problems. Also, exploring the data in such a way may give you 
@@ -411,7 +411,7 @@ $ samtools index results/bam/SRR2584866.aligned.sorted.bam
 ~~~
 {: .bash}
 
-### Viewing with `tview`
+###  Viewing with `tview`
 
 [Samtools](http://www.htslib.org/) implements a very simple text alignment viewer based on the GNU
 `ncurses` library, called `tview`. This alignment viewer works with short indels and shows [MAQ](http://maq.sourceforge.net/) consensus. 
@@ -471,7 +471,7 @@ this box, type the name of the "chromosome" followed by a colon and the position
 >> ## Solution
 >> 
 >> ~~~
->> $ samtools tview  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/results/bam/SRR2584866.aligned.sorted.bam  /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/<username>/dc_workshop/data/ref_genome/ecoli_rel606.fasta
+>> $ samtools tview  ~/dc_workshop/results/bam/SRR2584866.aligned.sorted.bam  ~/dc_workshop/data/ref_genome/ecoli_rel606.fasta
 >> ~~~
 >> {: .bash}
 >> 
