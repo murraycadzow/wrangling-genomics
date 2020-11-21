@@ -88,9 +88,7 @@ wording of the output might be slightly different.
 
 
 > ## Removing version control
-> ~~~
 > > $ rm -rf dc_workshop/.git
-> > ~~~
 > > {: .language-bash}
 > >
 > > But be careful! Running this command in the wrong directory, will remove

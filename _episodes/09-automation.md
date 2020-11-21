@@ -230,6 +230,18 @@ replace SRR2584866_fastqc/Icons/fastqc_icon.png? [y]es, [n]o, [A]ll, [N]one, [r]
 {: .output}
 
 
+## Adding in version control
+
+Now that we have our script made and working it is a good time to tell Git to start tracking the changes.
+
+First lets check that we have git initialised.
+
+~~~
+git status
+~~~
+{: .bash}
+
+
 # Automating the Rest of our Variant Calling Workflow
 
 We can extend these principles to the entire variant calling workflow. To do this, we will take all of the individual commands that we wrote before, put them into a single file, add variables so that the script knows to iterate through our input files and write to the appropriate output files. This is very similar to what we did with our `read_qc.sh` script, but will be a bit more complex.

@@ -1,15 +1,14 @@
 ---
 title: "Setting up Version Control with Git"
-teaching: 30
-exercises: 15
+teaching: 5
+exercises: 0
 questions:
 - "How do I get set up to use Git?"
 objectives:
-- "Write a shell script with multiple variables."
-- "Incorporate a `for` loop into a shell script."
+- "Configure `git` the first time it is used on a computer."
+- "Understand the meaning of the `--global` configuration flag."
 keypoints:
-- "Configure git the first time it is used on a computer."
-- "Understand the meaning of the --global configuration flag.
+-   "Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine."
 ---
 
 # Setting up Git
