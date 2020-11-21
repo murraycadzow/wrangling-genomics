@@ -3,18 +3,17 @@ title: "Setting up Version Control with Git"
 teaching: 30
 exercises: 15
 questions:
-- "How can I make my workflow more efficient and less error-prone?"
+- "How do I get set up to use Git?"
 objectives:
 - "Write a shell script with multiple variables."
 - "Incorporate a `for` loop into a shell script."
 keypoints:
-- "We can combine multiple commands into a shell script to automate a workflow."
-- "Use `echo` statements within your scripts to get an automated progress update."
+- "Configure git the first time it is used on a computer."
+- "Understand the meaning of the --global configuration flag.
 ---
 
 # Setting up Git
 
-Derived from https://swcarpentry.github.io/git-novice/02-setup/index.html
 
 
 When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples of configurations we will set as we get started with Git:
@@ -122,7 +121,5 @@ same commands to choose another editor or update your email address.
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 
+This lesson was derived from https://swcarpentry.github.io/git-novice/02-setup/index.html
 
-## Initialising a Git repository
-
-### Ignoring things
