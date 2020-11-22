@@ -241,6 +241,14 @@ git status
 ~~~
 {: .bash}
 
+Now lets add our changes that we have made and commit to git.
+
+~~~
+git add read_qc.sh
+
+git commit -m 'script for performing read qc'
+~~~
+{: .bash}
 
 # Automating the Rest of our Variant Calling Workflow
 
@@ -451,6 +459,22 @@ $ bash run_variant_calling.sh
 ~~~
 {: .bash}
 
+> ## Exercise
+> 
+> Now that your script is successfully running, add and commit that version to Git.
+>
+>> ## Solution
+>>
+>> ~~~
+>> git add run_variant_calling.sh
+>> 
+>> git commit -m 'Working version of run_variant_calling.sh with comments'
+>>
+>> ~~~
+>> {: .bash}
+>>
+> {: .solution}
+{: .challenge}
 
 > ## Exercise
 >
