@@ -22,25 +22,25 @@ First let's make sure we're still in the right directory.
 You should be in the `planets` directory.
 
 ~~~
-$ cd ~/Desktop/planets
+$ cd ~/example_git
 ~~~
 {: .language-bash}
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
+Let's create a file called `steps.txt` that contains some notes
+about how to create a git repo.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
 ~~~
-$ nano mars.txt
+$ nano steps.txt
 ~~~
 {: .language-bash}
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `steps.txt` file:
 
 ~~~
-Cold and dry, but everything is my favorite color
+to initialise a repo: git init
 ~~~
 
 Let's first verify that the file was properly created by running the list command (`ls`):
@@ -52,20 +52,20 @@ $ ls
 {: .language-bash}
 
 ~~~
-mars.txt
+steps.txt
 ~~~
 {: .output}
 
 
-`mars.txt` contains a single line, which we can see by running:
+`steps.txt` contains a single line, which we can see by running:
 
 ~~~
-$ cat mars.txt
+$ cat steps.txt
 ~~~
 {: .language-bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+to initialise a repo: git init
 ~~~
 {: .output}
 
@@ -85,7 +85,7 @@ No commits yet
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	steps.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -96,7 +96,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ~~~
-$ git add mars.txt
+$ git add steps.txt
 ~~~
 {: .language-bash}
 
@@ -115,25 +115,25 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   steps.txt
 
 ~~~
 {: .output}
 
-Git now knows that it's supposed to keep track of `mars.txt`,
+Git now knows that it's supposed to keep track of `steps.txt`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ~~~
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "First step for using git"
 ~~~
 {: .language-bash}
 
 ~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[master (root-commit) f22b25e] First step for using git
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 steps.txt
 ~~~
 {: .output}
 
@@ -177,10 +177,10 @@ $ git log
 
 ~~~
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: DC User <dcuser@obss.2020>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    First step for using git
 ~~~
 {: .output}
 
@@ -195,26 +195,26 @@ and the log message Git was given when the commit was created.
 
 > ## Where Are My Changes?
 >
-> If we run `ls` at this point, we will still see just one file called `mars.txt`.
+> If we run `ls` at this point, we will still see just one file called `steps.txt`.
 > That's because Git saves information about files' history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 {: .callout}
 
-Now suppose Dracula adds more information to the file.
+Now we want to add more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano steps.txt
+$ cat steps.txt
 ~~~
 {: .language-bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+to initialise a repo: git init
+to check status: git status
 ~~~
 {: .output}
 
@@ -232,7 +232,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   steps.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -255,13 +255,13 @@ $ git diff
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/steps.txt b/steps.txt
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/steps.txt
++++ b/steps.txt
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+ to initialise a repo: git init
++to check status: git status
 ~~~
 {: .output}
 
@@ -284,7 +284,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "notes on how to check status"
 $ git status
 ~~~
 {: .language-bash}
@@ -295,7 +295,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   steps.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -306,13 +306,13 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ~~~
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add steps.txt
+$ git commit -m "notes on how to check status"
 ~~~
 {: .language-bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[master 34961b1] notes on how to check status
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -363,15 +363,15 @@ First,
 we'll add another line to the file:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano steps.txt
+$ cat steps.txt
 ~~~
 {: .language-bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+to initialise a repo: git init
+to check status: git status
+to add a file: git add
 ~~~
 {: .output}
 
@@ -381,14 +381,14 @@ $ git diff
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/steps.txt b/steps.txt
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/steps.txt
++++ b/steps.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ to initialise a repo: git init
+ to check status: git status
++to add a file: git add
 ~~~
 {: .output}
 
@@ -399,7 +399,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ~~~
-$ git add mars.txt
+$ git add steps.txt
 $ git diff
 ~~~
 {: .language-bash}
@@ -417,14 +417,14 @@ $ git diff --staged
 {: .language-bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/steps.txt b/steps.txt
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/steps.txt
++++ b/steps.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ to initialise a repo: git init
+ to check status: git status
++to add a file: git add
 ~~~
 {: .output}
 
@@ -434,12 +434,12 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "notes on how to add"
 ~~~
 {: .language-bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 005937f] note on how to add
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
