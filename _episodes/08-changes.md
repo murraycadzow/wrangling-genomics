@@ -466,22 +466,22 @@ $ git log
 
 ~~~
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: DC User <dcuser@obss.2020>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    notes on how to add
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: DC User <dcuser@obss.2020>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    notes on how to check status
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: DC User <dcuser@obss.2020>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+   First step for using git
 ~~~
 {: .output}
 
@@ -522,10 +522,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 > ~~~
 > commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-> Author: Vlad Dracula <vlad@tran.sylvan.ia>
+> Author: DC User <dcuser@obss.2020>
 > Date:   Thu Aug 22 10:14:07 2013 -0400
 >
->    Discuss concerns about Mars' climate for Mummy
+>    notes on how to add
 > ~~~
 > {: .output}
 >
@@ -537,9 +537,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> 005937f Discuss concerns about Mars' climate for Mummy
-> 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> f22b25e Start notes on Mars as a base
+> 005937f notes on how to add 
+> 34961b1 notes on how to check status
+> f22b25e First step for using git
 > ~~~
 > {: .output}
 >
@@ -554,9 +554,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .language-bash}
 > ~~~
-> * 005937f (HEAD -> master) Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> * 005937f (HEAD -> master) notes on how to add 
+> * 34961b1 notes on how to check status
+> * f22b25e First sep for using git
 > ~~~
 > {: .output}
 {: .callout}
@@ -569,14 +569,14 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >    Try it for yourself:
 >
 >    ~~~
->    $ mkdir spaceships
+>    $ mkdir example_scripts
 >    $ git status
->    $ git add spaceships
+>    $ git add example_scripts
 >    $ git status
 >    ~~~
 >    {: .language-bash}
 >
->    Note, our newly created empty directory `spaceships` does not appear in
+>    Note, our newly created empty directory `example_scripts` does not appear in
 >    the list of untracked files even if we explicitly add it (_via_ `git add`) to our
 >    repository. This is the reason why you will sometimes see `.gitkeep` files
 >    in otherwise empty directories. Unlike `.gitignore`, these files are not special
@@ -594,9 +594,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >    Try it for yourself:
 >
 >    ~~~
->    $ touch spaceships/apollo-11 spaceships/sputnik-1
+>    $ touch example_scripts/qc.sh example_scripts/analysis.sh
 >    $ git status
->    $ git add spaceships
+>    $ git add example_scripts
 >    $ git status
 >    ~~~
 >    {: .language-bash}
@@ -604,7 +604,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >    Before moving on, we will commit these changes.
 >
 >    ~~~
->    $ git commit -m "Add some initial thoughts on spaceships"
+>    $ git commit -m "Some example scripts"
 >    ~~~
 >    {: .language-bash}
 >
@@ -616,169 +616,6 @@ we first need to add the changed files to the staging area
 repository (`git commit`):
 
 ![The Git Commit Workflow](../fig/git-committing.svg)
-
-> ## Choosing a Commit Message
->
-> Which of the following commit messages would be most appropriate for the
-> last commit made to `mars.txt`?
->
-> 1. "Changes"
-> 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. "Discuss effects of Mars' climate on the Mummy"
->
-> > ## Solution
-> > Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
-> > and answer 2 is redundant to using "git diff" to see what changed in this commit;
-> > but answer 3 is good: short, descriptive, and imperative.
-> {: .solution}
-{: .challenge}
-
-> ## Committing Changes to Git
->
-> Which command(s) below would save the changes of `myfile.txt`
-> to my local Git repository?
->
-> 1. ~~~
->    $ git commit -m "my recent changes"
->    ~~~
->    {: .language-bash}
-> 2. ~~~
->    $ git init myfile.txt
->    $ git commit -m "my recent changes"
->    ~~~
->    {: .language-bash}
-> 3. ~~~
->    $ git add myfile.txt
->    $ git commit -m "my recent changes"
->    ~~~
->    {: .language-bash}
-> 4. ~~~
->    $ git commit -m myfile.txt "my recent changes"
->    ~~~
->    {: .language-bash}
->
-> > ## Solution
-> >
-> > 1. Would only create a commit if files have already been staged.
-> > 2. Would try to create a new repository.
-> > 3. Is correct: first add the file to the staging area, then commit.
-> > 4. Would try to commit a file "my recent changes" with the message myfile.txt.
-> {: .solution}
-{: .challenge}
-
-> ## Committing Multiple Files
->
-> The staging area can hold changes from any number of files
-> that you want to commit as a single snapshot.
->
-> 1. Add some text to `mars.txt` noting your decision
-> to consider Venus as a base
-> 2. Create a new file `venus.txt` with your initial thoughts
-> about Venus as a base for you and your friends
-> 3. Add changes from both files to the staging area,
-> and commit those changes.
->
-> > ## Solution
-> >
-> > First we make our changes to the `mars.txt` and `venus.txt` files:
-> > ~~~
-> > $ nano mars.txt
-> > $ cat mars.txt
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > Maybe I should start with a base on Venus.
-> > ~~~
-> > {: .output}
-> > ~~~
-> > $ nano venus.txt
-> > $ cat venus.txt
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > Venus is a nice planet and I definitely should consider it as a base.
-> > ~~~
-> > {: .output}
-> > Now you can add both files to the staging area. We can do that in one line:
-> >
-> > ~~~
-> > $ git add mars.txt venus.txt
-> > ~~~
-> > {: .language-bash}
-> > Or with multiple commands:
-> > ~~~
-> > $ git add mars.txt
-> > $ git add venus.txt
-> > ~~~
-> > {: .language-bash}
-> > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
-> > ~~~
-> > $ git commit -m "Write plans to start a base on Venus"
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > [master cc127c2]
-> >  Write plans to start a base on Venus
-> >  2 files changed, 2 insertions(+)
-> >  create mode 100644 venus.txt
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
-> ## `bio` Repository
->
-> * Create a new Git repository on your computer called `bio`.
-> * Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes
-> * Modify one line, add a fourth line
-> * Display the differences
-> between its updated state and its original state.
->
-> > ## Solution
-> >
-> > If needed, move out of the `planets` folder:
-> >
-> > ~~~
-> > $ cd ..
-> > ~~~
-> > {: .language-bash}
-> >
-> > Create a new folder called `bio` and 'move' into it:
-> >
-> > ~~~
-> > $ mkdir bio
-> > $ cd bio
-> > ~~~
-> > {: .language-bash}
-> >
-> > Initialise git:
-> >
-> > ~~~
-> > $ git init
-> > ~~~
-> > {: .language-bash}
-> >
-> > Create your biography file `me.txt` using `nano` or another text editor.
-> > Once in place, add and commit it to the repository:
-> >
-> > ~~~
-> > $ git add me.txt
-> > $ git commit -m "Add biography file" 
-> > ~~~
-> > {: .language-bash}
-> >
-> > Modify the file as described (modify one line, add a fourth line).
-> > To display the differences
-> > between its updated state and its original state, use `git diff`:
-> >
-> > ~~~
-> > $ git diff me.txt
-> > ~~~
-> > {: .language-bash}
-> >
-> {: .solution}
-{: .challenge}
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
 [git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
