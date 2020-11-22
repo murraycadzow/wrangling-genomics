@@ -487,5 +487,4 @@ $ bash run_variant_calling.sh
 > you don't, there is a copy in `~/.solutions/wrangling-solutions/trimmed_fastq`. Does the number of variants change per sample?
 {: .challenge} 
 
-
-
+_This lesson was derived from [https://datacarpentry.org/wrangling-genomics/05-automation/index.html](https://datacarpentry.org/wrangling-genomics/05-automation/index.html)_

@@ -98,4 +98,4 @@ wording of the output might be slightly different.
 > > command `pwd`.
 
 
-_This lesson was derived from https://swcarpentry.github.io/git-novice/03-create/index.html_
+_This lesson was derived from [https://swcarpentry.github.io/git-novice/03-create/index.html](https://swcarpentry.github.io/git-novice/03-create/index.html)_

@@ -105,4 +105,4 @@ collaboration among different people.
 {: .challenge}
 
 
-_This lesson from derived from https://swcarpentry.github.io/git-novice/01-basics/index.html_
+_This lesson from derived from [https://swcarpentry.github.io/git-novice/01-basics/index.html](https://swcarpentry.github.io/git-novice/01-basics/index.html)_

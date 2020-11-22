@@ -340,3 +340,5 @@ SRR2584863_2un.trim.fastq.gz  SRR2584866_2un.trim.fastq.gz  SRR2589044_2un.trim.
 >> is good enough for our workflow.
 > {: .solution}
 {: .challenge}
+
+_This lesson was derived from [https://datacarpentry.org/wrangling-genomics/02-quality-control/index.html](https://datacarpentry.org/wrangling-genomics/02-quality-control/index.html)

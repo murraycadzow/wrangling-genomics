@@ -833,3 +833,5 @@ $ cat */summary.txt >  ~/dc_workshop/docs/fastqc_summaries.txt
 > If *you* type `>` or `$` yourself, it is an instruction from you that
 > the shell should redirect output or get the value of a variable.
 {: .callout}
+
+_This lesson was derived from [https://datacarpentry.org/wrangling-genomics/02-quality-control/index.html](https://datacarpentry.org/wrangling-genomics/02-quality-control/index.html)_

@@ -120,5 +120,5 @@ same commands to choose another editor or update your email address.
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 
-This lesson was derived from https://swcarpentry.github.io/git-novice/02-setup/index.html
+This lesson was derived from [https://swcarpentry.github.io/git-novice/02-setup/index.html](https://swcarpentry.github.io/git-novice/02-setup/index.html)
 

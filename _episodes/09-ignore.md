@@ -302,4 +302,4 @@ nothing to commit, working directory clean
 > {: .solution}
 {: .challenge}
 
-_This lesson is derived from https://swcarpentry.github.io/git-novice/06-ignore/index.html_
+_This lesson is derived from [https://swcarpentry.github.io/git-novice/06-ignore/index.html](https://swcarpentry.github.io/git-novice/06-ignore/index.html)_

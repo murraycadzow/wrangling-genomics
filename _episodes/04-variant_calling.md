@@ -500,4 +500,4 @@ this box, type the name of the "chromosome" followed by a colon and the position
 > is faster and more accurate. 
 {: .callout}
 
-
+_This lesson was derived from [https://datacarpentry.org/wrangling-genomics/04-variant_calling/index.html](https://datacarpentry.org/wrangling-genomics/04-variant_calling/index.html)_
