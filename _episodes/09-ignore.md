@@ -285,7 +285,7 @@ nothing to commit, working directory clean
 
 # Prepare our project directory
 
-Now that we have covered how to set up git, add files for tracking changes, and ignore files and directories we're ready now to use git in out `dc_workshop` directory.
+Now that we have covered how to set up git, add files for tracking changes, and ignore files and directories we're ready now to use git in our `dc_workshop` directory.
 
 Lets go ahead and initialise git in `~/dc_workshop`, make sure to `cd` into it first:
 
