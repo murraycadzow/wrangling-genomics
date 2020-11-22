@@ -282,24 +282,41 @@ nothing to commit, working directory clean
 > {: .solution}
 {: .challenge}
 
-> ## Log Files
->
-> You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
-> You want to keep them but you do not want to track them through `git`.
->
-> 1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
->
-> 2. Test your "ignore pattern" by creating some dummy files of the form `log_01`, etc.
->
-> 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
->
-> 4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
->
-> > ## Solution
-> >
-> > 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
-> > 3. track `log_01` using   `git add -f log_01`
-> {: .solution}
-{: .challenge}
+
+# Prepare our project directory
+
+Now that we have covered how to set up git, add files for tracking changes, and ignore files and directories we're ready now to use git in out `dc_workshop` directory.
+
+Lets go ahead and initialise git in `~/dc_workshop`, make sure to `cd` into it first:
+
+~~~
+$ cd ~/dc_workshop
+
+$ git init
+~~~
+{: .bash}
+
+We can use `git status` to work out what directories we might want to ignore
+
+~~~
+$ git status
+~~~
+{: .bash}
+
+And now we want to create our `.gitignore` file to ignore directories and files that we don't want git to track (or be accidentally added)
+
+~~~
+nano .gitignore
+cat .gitignore
+~~~
+{: .bash}
+
+~~~
+data/
+results/
+
+~~~
+{: .output}
+
 
 _This lesson is derived from [https://swcarpentry.github.io/git-novice/06-ignore/index.html](https://swcarpentry.github.io/git-novice/06-ignore/index.html)_
