@@ -137,6 +137,15 @@ bash ~/dc_workshop/modload.sh
 ~~~
 {: .bash}
 
+~~~
+The following modules were not unloaded:
+   (Use "module --force purge" to unload all):
+
+  1) slurm   2) NeSI
+Loaded modules: FastQC, Trimmomatic, BWA , SAMtools & BCFtools
+~~~
+{: .output}
+
 The programs will be loaded for the duration of the session but you will need to run the script each time you start a new session.
 
 # Quality Control
