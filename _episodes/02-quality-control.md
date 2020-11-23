@@ -93,7 +93,7 @@ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fa
 > ~~~
 > {: .bash}
 > 
-> This command creates a copy of each of the files in the `.backup/untrimmed_fastq/` directory that end in `fastq.gz` and
+> This command creates a copy of each of the files in the `/scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/untrimmed_fastq/` directory that end in `fastq.gz` and
 > places the copies in the current working directory (signified by `.`). 
 {: .callout}
 
