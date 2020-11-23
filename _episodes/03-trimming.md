@@ -128,7 +128,7 @@ While using FastQC we saw that Nextera adapters were present in our samples.
 The adapter sequences came with the installation of trimmomatic, so we will first copy these sequences into our current directory.
 
 ~~~
-$ cp ~/.miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa .
+$ cp /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/adapters/NexteraPE-PE.fa .
 ~~~
 {: .bash}
 
