@@ -89,7 +89,7 @@ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fa
 > avoid needing to download the data and instead use the data files provided in the `.backup/` directory.
 > 
 > ~~~
-> $ cp ~/.backup/untrimmed_fastq/*fastq.gz .
+> $ cp /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/untrimmed_fastq/*fastq.gz .
 > ~~~
 > {: .bash}
 > 
@@ -104,6 +104,40 @@ The data comes in a compressed format, which is why there is a `.gz` at the end 
 $ gunzip SRR2584863_1.fastq.gz 
 ~~~
 {: .bash}
+
+
+On NeSI, the programs we will be using have been installed for us, but we need to use the `module` system in order to make them available to us.
+
+We have provided a script that will load all of these programs (later we'll cover how to make your own scripts):
+~~~
+cp /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh ~/dc_workshop/
+
+cat ~/dc_workshop/modload.sh
+~~~
+{: .bash}
+
+~~~
+#!/bin/bash
+
+module purge
+module load FastQC
+module load Trimmomatic
+module load BWA/0.7.17-GCC-7.4.0
+module load SAMtools/1.9-GCC-7.4.0
+module load BCFtools/1.9-GCC-7.4.0
+
+echo "Loaded modules: FastQC, Trimmomatic, BWA , SAMtools & BCFtools"
+~~~
+{: .output}
+
+
+Now, load the programs we're going to run this script to load the programs:
+~~~
+bash ~/dc_workshop/modload.sh
+~~~
+{: .bash}
+
+The programs will be loaded for the duration of the session but you will need to run the script each time you start a new session.
 
 # Quality Control
 
