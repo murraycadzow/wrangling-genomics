@@ -546,7 +546,7 @@ these files either.
 So the easiest way to look at these webpage summary reports will be 
 to open them up using the jupyter file browser.
 
-The file browser has `/` as the project directory, so navigate to `/obss_2020/users/<username>/dc_workshop/results/fastqc_untrimmed_reads/`. You should see a list of files, and you want to double click on the `.html` files to view them.
+The file browser has `/` as the project directory, so navigate to `/obss_2020/users/<username>/dc_workshop/results/fastqc_untrimmed_reads/`. You should see a list of files, and you want to right-click on each `.html` file, and select "Open in a New Browser Tab" to view them.
 
 
 
