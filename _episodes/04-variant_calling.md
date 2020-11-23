@@ -45,7 +45,7 @@ $ gunzip data/ref_genome/ecoli_rel606.fasta.gz
 
 And now we need to load the software modules we want to use so they are ready for us later. This command runs a Bash script, which we'll touch on what that is in a later lesson.
 ~~~
-bash /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
+source /scale_wlg_persistent/filesets/project/nesi02659/obss_2020/resources/day2/modload.sh
 ~~~
 {: .bash}
 
