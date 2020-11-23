@@ -185,7 +185,7 @@ $ samtools view -S -b results/sam/SRR2584866.aligned.sam > results/bam/SRR258486
 {: .output}
 
   
-#  ## Sort BAM file by coordinates
+# Sort BAM file by coordinates
 
 Next we sort the BAM file using the `sort` command from `samtools`. `-o` tells the command where to write the output.
 
