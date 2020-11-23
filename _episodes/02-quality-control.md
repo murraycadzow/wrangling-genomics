@@ -133,7 +133,7 @@ echo "Loaded modules: FastQC, Trimmomatic, BWA , SAMtools & BCFtools"
 
 Now, load the programs we're going to run this script to load the programs:
 ~~~
-bash ~/dc_workshop/modload.sh
+source ~/dc_workshop/modload.sh
 ~~~
 {: .bash}
 
