@@ -757,6 +757,7 @@ using the `cat` command. We'll call this `fastqc_summaries.txt` and move
 it to `~/dc_workshop/docs`.
 
 ~~~
+$ mkdir -p ~/dc_workshop/docs
 $ cat */summary.txt >  ~/dc_workshop/docs/fastqc_summaries.txt 
 ~~~
 {: .bash}
