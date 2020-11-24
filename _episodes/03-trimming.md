@@ -98,9 +98,9 @@ In this example, we've told Trimmomatic:
 | `SRR_1056_1.fastq` | the first input file name |
 | `SRR_1056_2.fastq` | the second input file name |
 | `SRR_1056_1.trimmed.fastq` | the output file for surviving pairs from the `_1` file |
-| `SRR_1056_1un.trimmed.fastq` | the output file for orphaned reads from the `_1` file |
+| `SRR_1056_1.untrimmed.fastq` | the output file for orphaned reads from the `_1` file |
 | `SRR_1056_2.trimmed.fastq` | the output file for surviving pairs from the `_2` file |
-| `SRR_1056_2un.trimmed.fastq` | the output file for orphaned reads from the `_2` file |
+| `SRR_1056_2.untrimmed.fastq` | the output file for orphaned reads from the `_2` file |
 | `ILLUMINACLIP:SRR_adapters.fa`| to clip the Illumina adapters from the input file using the adapter sequences listed in `SRR_adapters.fa` |
 |`SLIDINGWINDOW:4:20` | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |
 
@@ -139,8 +139,8 @@ this trimming step. This command will take a few minutes to run.
 
 ~~~
 $ trimmomatic PE SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz \
-                SRR2589044_1.trim.fastq.gz SRR2589044_1un.trim.fastq.gz \
-                SRR2589044_2.trim.fastq.gz SRR2589044_2un.trim.fastq.gz \
+                SRR2589044_1.trim.fastq.gz SRR2589044_1.untrim.fastq.gz \
+                SRR2589044_2.trim.fastq.gz SRR2589044_2.untrim.fastq.gz \
                 SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15 
 ~~~
 {: .bash}
@@ -148,7 +148,7 @@ $ trimmomatic PE SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz \
 
 ~~~
 TrimmomaticPE: Started with arguments:
- SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz SRR2589044_1.trim.fastq.gz SRR2589044_1un.trim.fastq.gz SRR2589044_2.trim.fastq.gz SRR2589044_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+ SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz SRR2589044_1.trim.fastq.gz SRR2589044_1.untrim.fastq.gz SRR2589044_2.trim.fastq.gz SRR2589044_2.untrim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
 Multiple cores found: Using 2 threads
 Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
 Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
@@ -188,8 +188,8 @@ $ ls SRR2589044*
 {: .bash}
 
 ~~~
-SRR2589044_1.fastq.gz       SRR2589044_1un.trim.fastq.gz  SRR2589044_2.trim.fastq.gz
-SRR2589044_1.trim.fastq.gz  SRR2589044_2.fastq.gz         SRR2589044_2un.trim.fastq.gz
+SRR2589044_1.fastq.gz       SRR2589044_1.untrim.fastq.gz  SRR2589044_2.trim.fastq.gz
+SRR2589044_1.trim.fastq.gz  SRR2589044_2.fastq.gz         SRR2589044_2.untrim.fastq.gz
 ~~~
 {: .output}
 
@@ -204,10 +204,10 @@ $ ls SRR2589044* -l -h
 ~~~
 -rw-rw-r-- 1 dcuser dcuser 124M Jul  6 20:22 SRR2589044_1.fastq.gz
 -rw-rw-r-- 1 dcuser dcuser  94M Jul  6 22:33 SRR2589044_1.trim.fastq.gz
--rw-rw-r-- 1 dcuser dcuser  18M Jul  6 22:33 SRR2589044_1un.trim.fastq.gz
+-rw-rw-r-- 1 dcuser dcuser  18M Jul  6 22:33 SRR2589044_1.untrim.fastq.gz
 -rw-rw-r-- 1 dcuser dcuser 128M Jul  6 20:24 SRR2589044_2.fastq.gz
 -rw-rw-r-- 1 dcuser dcuser  91M Jul  6 22:33 SRR2589044_2.trim.fastq.gz
--rw-rw-r-- 1 dcuser dcuser 271K Jul  6 22:33 SRR2589044_2un.trim.fastq.gz
+-rw-rw-r-- 1 dcuser dcuser 271K Jul  6 22:33 SRR2589044_2.untrim.fastq.gz
 ~~~
 {: .output}
 
@@ -230,8 +230,8 @@ $ for infile in *_1.fastq.gz
 > do
 >   base=$(basename ${infile} _1.fastq.gz)
 >   trimmomatic PE ${infile} ${base}_2.fastq.gz \
->                ${base}_1.trim.fastq.gz ${base}_1un.trim.fastq.gz \
->                ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
+>                ${base}_1.trim.fastq.gz ${base}_1.untrim.fastq.gz \
+>                ${base}_2.trim.fastq.gz ${base}_2.untrim.fastq.gz \
 >                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15 
 > done
 ~~~
@@ -249,12 +249,12 @@ $ ls
 
 ~~~
 NexteraPE-PE.fa               SRR2584866_1.fastq.gz         SRR2589044_1.trim.fastq.gz
-SRR2584863_1.fastq.gz         SRR2584866_1.trim.fastq.gz    SRR2589044_1un.trim.fastq.gz
-SRR2584863_1.trim.fastq.gz    SRR2584866_1un.trim.fastq.gz  SRR2589044_2.fastq.gz
-SRR2584863_1un.trim.fastq.gz  SRR2584866_2.fastq.gz         SRR2589044_2.trim.fastq.gz
-SRR2584863_2.fastq.gz         SRR2584866_2.trim.fastq.gz    SRR2589044_2un.trim.fastq.gz
-SRR2584863_2.trim.fastq.gz    SRR2584866_2un.trim.fastq.gz
-SRR2584863_2un.trim.fastq.gz  SRR2589044_1.fastq.gz
+SRR2584863_1.fastq.gz         SRR2584866_1.trim.fastq.gz    SRR2589044_1.untrim.fastq.gz
+SRR2584863_1.trim.fastq.gz    SRR2584866_1.untrim.fastq.gz  SRR2589044_2.fastq.gz
+SRR2584863_1.untrim.fastq.gz  SRR2584866_2.fastq.gz         SRR2589044_2.trim.fastq.gz
+SRR2584863_2.fastq.gz         SRR2584866_2.trim.fastq.gz    SRR2589044_2.untrim.fastq.gz
+SRR2584863_2.trim.fastq.gz    SRR2584866_2.untrim.fastq.gz
+SRR2584863_2.untrim.fastq.gz  SRR2589044_1.fastq.gz
 ~~~
 {: .output}
 
@@ -287,6 +287,7 @@ to a new subdirectory within our `data/` directory.
 $ cd ~/dc_workshop/data/untrimmed_fastq
 $ mkdir ../trimmed_fastq
 $ mv *.trim* ../trimmed_fastq
+$ mv *.untrim* ../trimmed_fastq
 $ cd ../trimmed_fastq
 $ ls
 ~~~
@@ -294,9 +295,9 @@ $ ls
 
 ~~~
 SRR2584863_1.trim.fastq.gz    SRR2584866_1.trim.fastq.gz    SRR2589044_1.trim.fastq.gz
-SRR2584863_1un.trim.fastq.gz  SRR2584866_1un.trim.fastq.gz  SRR2589044_1un.trim.fastq.gz
+SRR2584863_1.untrim.fastq.gz  SRR2584866_1.untrim.fastq.gz  SRR2589044_1.untrim.fastq.gz
 SRR2584863_2.trim.fastq.gz    SRR2584866_2.trim.fastq.gz    SRR2589044_2.trim.fastq.gz
-SRR2584863_2un.trim.fastq.gz  SRR2584866_2un.trim.fastq.gz  SRR2589044_2un.trim.fastq.gz
+SRR2584863_2.untrim.fastq.gz  SRR2584866_2.untrim.fastq.gz  SRR2589044_2.untrim.fastq.gz
 ~~~
 {: .output}
 
